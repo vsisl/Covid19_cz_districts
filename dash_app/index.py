@@ -34,7 +34,7 @@ def display_page(pathname):
     if pathname == '/dev':
         return prototyping_layout.layout
     else:
-        return '404'
+        return prototyping_layout.layout
 
 
 if __name__ == '__main__':
