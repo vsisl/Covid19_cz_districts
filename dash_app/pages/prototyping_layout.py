@@ -81,7 +81,7 @@ row_credits = dbc.Row([
 	dbc.Col([
 		# github
 		html.Div([
-			html.A('Github', href='', target='_blank')
+			html.A('Github', href='https://github.com/vsisl/Covid19_cz_districts', target='_blank')
 		])
 	], width=1)
 ], justify='end')
