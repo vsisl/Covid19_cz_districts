@@ -1,0 +1,16 @@
+# Use this file to setup a conda environment for the project.
+name: covid_cz_districts
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.6
+  - spyder
+  - pip
+  - pip:
+    - plotly_express
+    - plotly
+    - dash
+    - dash-bootstrap-components
+    - pandas
+    - gunicorn
