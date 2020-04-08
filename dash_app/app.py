@@ -25,6 +25,7 @@ app.config.suppress_callback_exceptions = True
 link = 'https://docs.google.com/spreadsheets/d/1FFEDhS6VMWon_AWkJrf8j3XxjZ4J6UI1B2lO3IW-EEc/export?format=csv&id=1FFEDhS6VMWon_AWkJrf8j3XxjZ4J6UI1B2lO3IW-EEc&gid=1011737151'
 r = requests.get(link)
 data = r.content
+# print('-- DATA QUERY EXECUTED --')
 
 # get data in wide format
 df = pd.read_csv(BytesIO(data))
