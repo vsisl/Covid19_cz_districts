@@ -51,4 +51,19 @@ def update_plot(selected_rows):
     else:
         fig = px.line(dff[dff['Okres'].isin(districts[selected_rows])], x='Datum', y='Nakažení', line_group='Okres', color='Okres', hover_name='Okres')
 
+        for trace in fig.data:
+            fig.add_annotation(
+                x=trace.x[-1],
+                y=trace.y[-1],
+                text=trace.hovertext[-1],
+                visible=True,
+                showarrow=True,
+                xanchor='left',  # shifts text to the right from the end of the arrow
+                ax=20)
+
+        for trace in fig.data:
+            trace.hoverinfo = 'x+y'
+            trace.hovertemplate = '<b>%{hovertext}</b><br>Datum: %{x}<br>Nakažení: %{y}<extra></extra>'
+
+        fig.update_layout(showlegend=False)
     return fig
