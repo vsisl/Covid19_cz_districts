@@ -66,4 +66,6 @@ def update_plot(selected_rows):
             trace.hovertemplate = '<b>%{hovertext}</b><br>Datum: %{x}<br>Nakažení: %{y}<extra></extra>'
 
         fig.update_layout(showlegend=False)
+        fig.update_layout(margin={'l': 50, 'r': 20, 't': 20, 'b': 20})
+        # fig.update_layout(xaxis_tickformat='%-d. %-m. %Y')
     return fig
