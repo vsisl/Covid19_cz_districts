@@ -95,11 +95,11 @@ layout = html.Div([
 		dbc.Col([
 			row_graph,
 			row_temp_div
-		], width=7),
+		], md=7),
 
 		dbc.Col([
 			row_table,
-		], width=5)
+		], md=5)
 	]),
 	row_credits
 ])
