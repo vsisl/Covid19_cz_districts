@@ -15,7 +15,11 @@ row_graph = dbc.Row([
 		dcc.Graph(
 			id='plot_districts',
 			figure={},
-			style={'height': 600}
+			style={'height': 600},
+			config={
+				'displaylogo': False,
+				'modeBarButtonsToRemove': ['toImage', 'zoomIn2d', 'zoomOut2d', 'resetScale2d'],
+			}
 		)
 		# 	]
 		# )
