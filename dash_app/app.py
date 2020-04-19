@@ -48,7 +48,7 @@ else:
     dff['Datum'] = dff['Datum'].astype('datetime64')
     dff['Nakažení'] = dff['Nakažení'].astype('int64')
 
-# prepare df or table
+# prepare df for table
 df1 = dff[dff.Datum == dff.Datum.max()]
 df2 = dff[dff.Datum == (dff.Datum.max() - pd.Timedelta(days=3))]
 df1.set_index(keys=['Okres'], inplace=True)
