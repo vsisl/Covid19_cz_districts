@@ -52,16 +52,17 @@ row_table = dbc.Row([
 			sort_action='native',
 			sort_mode='multi',
 			style_table={
-				'height': '100%',
+				# 'height': '100%',
+				# 'height': '1200px',
 				# 'overflowY': 'scroll'
 			},
 			fixed_rows={'headers': True, 'data': 0},
 			# style_cell={'width': '100px'},
 			style_cell_conditional=[
 				{'if': {'column_id': 'Okres'}, 		'textAlign': 'left'},
-				{'if': {'column_id': 'Okres'}, 		'width': '40%'},
+				{'if': {'column_id': 'Okres'}, 		'width': '30%'},
 				{'if': {'column_id': 'Nakažení'}, 	'width': '20%'},
-				{'if': {'column_id': 'Přírůstek'}, 	'width': '30%'}
+				{'if': {'column_id': 'Přírůstek'}, 	'width': '40%'}
 			]
 		)
 	])
