@@ -34,8 +34,8 @@ else:
     df = pd.read_csv(BytesIO(data))
     df = df.set_index(['Kraj', 'Okres']).T
     df = df.dropna()
-    df = df.drop(index='Kontrola')
-    df = df.drop(index='Změna')
+    # df = df.drop(index='Kontrola')
+    # df = df.drop(index='Změna')
     df.index.rename(name='Datum', inplace=True)
 
     # wide to long
