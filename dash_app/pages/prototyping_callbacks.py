@@ -42,7 +42,7 @@ from dash_app.app import app, districts, dff
 
 @app.callback(
     Output('plot_districts', 'figure'),
-    [Input('table_districts', "selected_rows")])
+    [Input('table_districts', 'selected_rows')])
 def update_plot(selected_rows):
     # if selected rows is empty list
     if len(selected_rows) == 0:
