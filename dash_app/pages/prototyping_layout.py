@@ -51,12 +51,13 @@ row_table = dbc.Row([
 			sort_action='native',
 			sort_mode='multi',
 			style_table={
-				# 'height': '100%',
+				# 'height': '150%',
 				# 'height': '1200px',
-				# 'overflowY': 'scroll'
+				# 'overflowY': 'scroll',
+				# 'height': '1200px',
+				# 'overflowY': 'auto'
 			},
 			fixed_rows={'headers': True, 'data': 0},
-			# style_cell={'width': '100px'},
 			style_cell_conditional=[
 				{'if': {'column_id': 'Okres'}, 		'textAlign': 'left'},
 				{'if': {'column_id': 'Okres'}, 		'width': '30%'},
