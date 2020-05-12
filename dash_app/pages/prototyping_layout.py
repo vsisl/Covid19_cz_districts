@@ -63,7 +63,10 @@ row_table = dbc.Row([
 				{'if': {'column_id': 'Okres'}, 		'width': '30%'},
 				{'if': {'column_id': 'Nakažení'}, 	'width': '20%'},
 				{'if': {'column_id': 'Přírůstek'}, 	'width': '40%'}
-			]
+			],
+			# export_columns='all',
+			# export_format='xlsx',
+			# export_headers='display'
 		)
 	])
 ])
