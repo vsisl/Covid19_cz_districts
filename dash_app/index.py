@@ -14,8 +14,6 @@ from dash_app.app import app
 from dash_app.pages import prototyping_layout
 from dash_app.pages import prototyping_callbacks     # this import statement has to be here even though callbacks are not explicitly used
 
-# styles = {'link': {'padding': '20'}}
-
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
 
