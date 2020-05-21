@@ -50,14 +50,15 @@ row_table = dbc.Row([
 			selected_rows=[0, 1, 2, 3, 4],
 			sort_action='native',
 			sort_mode='multi',
+			fixed_rows={'headers': True, 'data': 0},
 			style_table={
+				'height': 800,
 				# 'height': '150%',
 				# 'height': '1200px',
 				# 'overflowY': 'scroll',
 				# 'height': '1200px',
 				# 'overflowY': 'auto'
 			},
-			fixed_rows={'headers': True, 'data': 0},
 			style_cell_conditional=[
 				{'if': {'column_id': 'Okres'}, 		'textAlign': 'left'},
 				{'if': {'column_id': 'Okres'}, 		'width': '30%'},
