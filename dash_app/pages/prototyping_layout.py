@@ -91,7 +91,14 @@ row_credits = dbc.Row([
 		html.Div([
 			html.A('Github', href='https://github.com/vsisl/Covid19_cz_districts', target='_blank')
 		])
-	], width=1)
+	], width=1),
+
+	dbc.Col([
+		# cookies
+		html.Div([
+			html.A('Soukromí a cookies', href='/cookies', target='_blank')
+		])
+	], width=2)
 ], justify='end')
 
 layout = html.Div([
