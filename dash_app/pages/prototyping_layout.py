@@ -75,9 +75,9 @@ row_credits = dbc.Row([
 	dbc.Col([
 		# author
 		html.Div([
-			html.A('vaclav.sisl@gmail.com', href='mailto:vaclav.sisl@gmail.com', target='_blank')
+			html.A('Autor', href='https://www.linkedin.com/in/vaclav-sisl/', target='_blank')
 		])
-	], width=2),
+	], width=1),
 
 	dbc.Col([
 		# data
