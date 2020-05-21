@@ -15,6 +15,35 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 app.title = 'Covid-19 v okresech'
 server = app.server
 app.config.suppress_callback_exceptions = True
+
+# adding Google Analytics with IP anonymization
+app.index_string = """<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167323389-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-167323389-1', { 'anonymize_ip': true });
+        </script>
+        {%metas%}
+        <title>{%title%}</title>
+        {%favicon%}
+        {%css%}
+    </head>
+    <body>
+        {%app_entry%}
+        <footer>
+            {%config%}
+            {%scripts%}
+            {%renderer%}
+        </footer>
+    </body>
+</html>"""
+
 decimal_format = Format(precision=2, scheme=Scheme.decimal)
 offline_data_mode = False
 PATHS_TO_DB_FILES = {'dff': 'data/dff.pkl'}
