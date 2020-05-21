@@ -11,7 +11,7 @@ sys.path.append(os.getcwd())
 # 	print(pth)
 
 from dash_app.app import app
-from dash_app.pages import prototyping_layout
+from dash_app.pages import prototyping_layout, cookies_layout
 from dash_app.pages import prototyping_callbacks     # this import statement has to be here even though callbacks are not explicitly used
 
 app.layout = html.Div([
@@ -30,6 +30,8 @@ app.layout = html.Div([
 def display_page(pathname):
     if pathname == '/dev':
         return prototyping_layout.layout
+    if pathname == '/cookies':
+        return cookies_layout.layout
     else:
         return prototyping_layout.layout
 
