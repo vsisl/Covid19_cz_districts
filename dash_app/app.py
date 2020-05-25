@@ -11,7 +11,11 @@ from io import BytesIO
 external_stylesheets = [dbc.themes.BOOTSTRAP]
 # external_stylesheets = [dbc.themes.GRID, 'https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+app = dash.Dash(
+    __name__,
+    external_stylesheets=external_stylesheets,
+    # meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1"}]
+)
 app.title = 'Covid-19 v okresech'
 server = app.server
 app.config.suppress_callback_exceptions = True
@@ -45,7 +49,7 @@ app.index_string = """<!DOCTYPE html>
 </html>"""
 
 decimal_format = Format(precision=2, scheme=Scheme.decimal)
-offline_data_mode = False
+offline_data_mode = True
 PATHS_TO_DB_FILES = {'dff': 'data/dff.pkl'}
 
 if offline_data_mode:
