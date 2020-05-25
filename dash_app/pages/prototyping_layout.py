@@ -65,6 +65,15 @@ row_table = dbc.Row([
 				{'if': {'column_id': 'Nakažení'}, 	'width': '20%'},
 				{'if': {'column_id': 'Přírůstek'}, 	'width': '40%'}
 			],
+			style_data_conditional=[
+				{'if': {'row_index': 'odd'}, 'backgroundColor': 'rgb(248, 248, 248)'}
+			],
+			style_header={
+				'backgroundColor': 'rgb(230, 230, 230)',
+				'fontWeight': 'bold',
+				'height': 'auto',			# wrap text in case of overflow
+				'whiteSpace': 'normal'
+			},
 			# export_columns='all',
 			# export_format='xlsx',
 			# export_headers='display'
