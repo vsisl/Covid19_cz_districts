@@ -87,28 +87,28 @@ row_credits = dbc.Row([
 		html.Div([
 			html.A('Autor', href='https://www.linkedin.com/in/vaclav-sisl/', target='_blank')
 		])
-	], width=1),
+	], lg=1, width=12),
 
 	dbc.Col([
 		# data
 		html.Div([
 			html.A('Data', href='https://docs.google.com/spreadsheets/d/1FFEDhS6VMWon_AWkJrf8j3XxjZ4J6UI1B2lO3IW-EEc/edit?usp=sharing', target='_blank')
 		])
-	], width=1),
+	], lg=1, width=12),
 
 	dbc.Col([
 		# github
 		html.Div([
 			html.A('Github', href='https://github.com/vsisl/Covid19_cz_districts', target='_blank')
 		])
-	], width=1),
+	], lg=1, width=12),
 
 	dbc.Col([
 		# cookies
 		html.Div([
 			html.A('Soukromí a cookies', href='/cookies', target='_blank')
 		])
-	], width=2)
+	], lg=2, width=12)
 ], justify='end')
 
 layout = html.Div([
@@ -116,11 +116,11 @@ layout = html.Div([
 		dbc.Col([
 			row_graph,
 			row_temp_div
-		], lg=7),
+		], lg=7, width=12),
 
 		dbc.Col([
 			row_table,
-		], lg=5)
+		], lg=5, width=12)
 	]),
 	row_credits
 ])
