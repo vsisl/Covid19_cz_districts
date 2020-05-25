@@ -8,6 +8,7 @@
   /* your conditional / responsive CSS inside this condition */
   body {
     zoom: 200%;
+    //font-size: 200%;
     //scale(2);
   }
 }
