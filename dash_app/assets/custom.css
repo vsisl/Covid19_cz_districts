@@ -2,3 +2,12 @@
   display: block;
   margin: 0;
 }
+
+/* condition for screen size lower than XYZpx */
+@media (max-width:991px) {
+  /* your conditional / responsive CSS inside this condition */
+  body {
+    zoom: 200%;
+    //scale(2);
+  }
+}
