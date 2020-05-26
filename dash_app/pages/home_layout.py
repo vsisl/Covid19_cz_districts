@@ -52,12 +52,7 @@ row_table = dbc.Row([
 			sort_mode='multi',
 			fixed_rows={'headers': True, 'data': 0},
 			style_table={
-				'height': 800,
-				# 'height': '150%',
-				# 'height': '1200px',
-				# 'overflowY': 'scroll',
-				# 'height': '1200px',
-				# 'overflowY': 'auto'
+				'max-height': 600,
 			},
 			style_cell_conditional=[
 				{'if': {'column_id': 'Okres'}, 		'textAlign': 'left'},
