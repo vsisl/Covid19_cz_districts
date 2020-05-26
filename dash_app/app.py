@@ -8,7 +8,7 @@ from io import BytesIO
 app = dash.Dash(
     __name__,
     external_stylesheets=[dbc.themes.BOOTSTRAP],
-    # meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1"}]
+    meta_tags=[{'name': 'viewport', 'content': 'width=device-width, initial-scale=1'}]
 )
 app.title = 'Covid-19 v okresech'
 server = app.server
