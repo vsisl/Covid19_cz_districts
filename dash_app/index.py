@@ -22,7 +22,7 @@ app.layout = html.Div([
     ], justify='start'),
 
     html.Div(id='page_content')
-], style={'width': '98%'})
+], style={'width': '98%', 'padding-left': '1%'})
 
 
 @app.callback(Output('page_content', 'children'),
