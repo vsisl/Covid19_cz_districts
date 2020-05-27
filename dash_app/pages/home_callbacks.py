@@ -62,5 +62,6 @@ def update_plot(selected_rows):
         fig.update_layout(showlegend=False)
         fig.update_layout(margin={'l': 50, 'r': 30, 't': 0, 'b': 20})
         fig.update_layout(modebar={'orientation': 'v'})
+        fig.update_layout(yaxis_title='Počet nakažených (kumulativně)')
         # fig.update_layout(xaxis_tickformat='%-d. %-m. %Y')
     return fig
