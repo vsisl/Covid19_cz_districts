@@ -8,7 +8,7 @@
 @media (max-width:991px) {
   /* your conditional / responsive CSS inside this condition */
   body {
-    zoom: 200%;
+    //zoom: 200%;
     //font-size: 200%;
     //scale(2);
   }
