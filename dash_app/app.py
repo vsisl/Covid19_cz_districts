@@ -5,6 +5,11 @@ import pandas as pd
 import requests
 from io import BytesIO
 
+decimal_format = Format(precision=2, scheme=Scheme.decimal)
+PATHS_TO_DB_FILES = {'dff': 'data/dff.pkl'}
+offline_data_mode = False
+apply_ga = True
+
 app = dash.Dash(
     __name__,
     external_stylesheets=[dbc.themes.BOOTSTRAP],
@@ -14,38 +19,38 @@ app.title = 'Covid-19 v okresech'
 server = app.server
 app.config.suppress_callback_exceptions = True
 
-# adding Google Analytics with IP anonymization
-app.index_string = """<!DOCTYPE html>
-<html>
-    <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167323389-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+if apply_ga:
+    # adding Google Analytics with IP anonymization
+    app.index_string = """<!DOCTYPE html>
+    <html>
+        <head>
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167323389-1"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+    
+                gtag('config', 'UA-167323389-1', { 'anonymize_ip': true });
+            </script>
+            {%metas%}
+            <title>{%title%}</title>
+            {%favicon%}
+            {%css%}
+        </head>
+        <body>
+            {%app_entry%}
+            <footer>
+                {%config%}
+                {%scripts%}
+                {%renderer%}
+            </footer>
+        </body>
+    </html>"""
 
-            gtag('config', 'UA-167323389-1', { 'anonymize_ip': true });
-        </script>
-        {%metas%}
-        <title>{%title%}</title>
-        {%favicon%}
-        {%css%}
-    </head>
-    <body>
-        {%app_entry%}
-        <footer>
-            {%config%}
-            {%scripts%}
-            {%renderer%}
-        </footer>
-    </body>
-</html>"""
-
-decimal_format = Format(precision=2, scheme=Scheme.decimal)
-offline_data_mode = False
-PATHS_TO_DB_FILES = {'dff': 'data/dff.pkl'}
-
+# ------------------------
+# --- DATA ACQUISITION ---
+# ------------------------
 if offline_data_mode:
     # offline data acquisition
     dff = pd.read_pickle(PATHS_TO_DB_FILES['dff'])
