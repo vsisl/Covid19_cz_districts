@@ -4,13 +4,21 @@
   margin: 0;
 }
 
+.dash-graph-districts {
+    height: 600px;
+}
+
 /* condition for screen size lower than XYZpx */
-@media (max-width:991px) {
+@media (max-width:600px) {
   /* your conditional / responsive CSS inside this condition */
   body {
     //zoom: 200%;
     //font-size: 200%;
     //scale(2);
+  }
+
+  .dash-graph-districts {
+    height: 400px;
   }
 }
 
