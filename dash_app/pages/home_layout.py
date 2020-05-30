@@ -12,9 +12,9 @@ row_graph = dbc.Row([
 		# 	id='loading_plot_districts',
 		# 	children=[
 		dcc.Graph(
+			className='dash-graph-districts',
 			id='plot_districts',
 			figure={},
-			style={'height': 600},
 			config={
 				'displaylogo': False,
 				'modeBarButtonsToRemove': ['toImage', 'zoomIn2d', 'zoomOut2d', 'resetScale2d'],
@@ -51,9 +51,7 @@ row_table = dbc.Row([
 			sort_action='native',
 			sort_mode='multi',
 			fixed_rows={'headers': True, 'data': 0},
-			style_table={
-				'max-height': 600,
-			},
+			style_table={'max-height': 600},
 			style_cell_conditional=[
 				{'if': {'column_id': 'Okres'}, 		'textAlign': 'left'},
 				{'if': {'column_id': 'Okres'}, 		'width': '30%'},
