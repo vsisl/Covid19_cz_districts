@@ -1,8 +1,7 @@
 # This file is only for purposes of creating docker image.
 requests
 pandas
-plotly
 plotly_express
-dash
+dash==1.12.0
 dash-bootstrap-components
 gunicorn
