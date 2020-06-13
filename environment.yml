@@ -4,13 +4,12 @@ channels:
   - defaults
   - conda-forge
 dependencies:
-  - python=3.6
+  - python=3.8
   - spyder
   - pip
   - pip:
     - plotly_express
-    - plotly
-    - dash
+    - dash==1.12.0
     - dash-bootstrap-components
     - pandas
     - gunicorn
