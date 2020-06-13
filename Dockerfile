@@ -1,9 +1,9 @@
-FROM ubuntu:19.10
+FROM ubuntu
 
 MAINTAINER Vaclav Sisl <vaclav.sisl@gmail.com>
 
 RUN apt-get update
-RUN apt-get install -y python3 python3-dev python3-pip git
+RUN apt-get install -y python3 python3-dev python3-pip
 
 COPY requirements.txt /tmp/requirements.txt
 RUN pip3 install -r /tmp/requirements.txt
