@@ -1,5 +1,7 @@
 import dash
 import dash_bootstrap_components as dbc
+import dash_core_components as dcc
+import dash_html_components as html
 from dash_table.Format import Format, Scheme
 import pandas as pd
 import requests
@@ -9,6 +11,31 @@ decimal_format = Format(precision=2, scheme=Scheme.decimal)
 PATHS_TO_DB_FILES = {'dff': 'data/dff.pkl'}
 offline_data_mode = False
 apply_ga = True
+
+
+def dcc_transparent_loading(loading_id, loading_children, loading_type='default'):
+    """
+    Returns dcc.Loading wrapped in html.Div(className='loading_wrapper').
+    This html.Div has style defined in assets/custom.css giving dcc.Loading a transparent background.
+
+    :param loading_id: str; is passed to dcc.Loading(id)
+    :param loading_children: list; is passed to dcc.Loading(children)
+    :param loading_type: str; {'graph', 'cube', 'circle', 'dot', 'default'}; is passed to dcc.Loading(type)
+    :return: html.Div
+    """
+    transparent_loading = html.Div(
+        className='loading_wrapper',
+        children=[
+            dcc.Loading(
+                id=loading_id,
+                type=loading_type,
+                children=loading_children
+            )
+        ]
+    )
+
+    return transparent_loading
+
 
 app = dash.Dash(
     __name__,

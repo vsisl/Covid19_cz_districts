@@ -26,3 +26,9 @@
 .dash-spreadsheet-inner.dash-spreadsheet.dash-freeze-top.dash-no-filter.dash-fill-width {
   max-height: 600px;
 }
+
+/* dcc.Loading component with transparent background */
+/* this defines a style for a component with id='loading-wrapper' */
+.loading_wrapper > div {
+    visibility: visible !important;
+}

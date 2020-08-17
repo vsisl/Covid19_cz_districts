@@ -40,4 +40,4 @@ if __name__ == '__main__':
     # hostname = socket.gethostname()
     # ip_address = socket.gethostbyname(hostname)
     # app.run_server(host=ip_address, port=5002, debug=True)
-    app.run_server(host='0.0.0.0', port=5002, debug=True)
+    app.run_server(host='0.0.0.0', port=5000, debug=True)

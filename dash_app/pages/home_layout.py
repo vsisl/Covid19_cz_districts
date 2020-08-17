@@ -3,25 +3,26 @@ import dash_html_components as html
 import dash_bootstrap_components as dbc
 import dash_table
 
-from dash_app.app import df_table, decimal_format
+from dash_app.app import df_table, decimal_format, dcc_transparent_loading
 
 # --- DEFINE LAYOUT
 row_graph = dbc.Row([
 	dbc.Col([
-		# dcc.Loading(
-		# 	id='loading_plot_districts',
-		# 	children=[
-		dcc.Graph(
-			className='dash-graph-districts',
-			id='plot_districts',
-			figure={},
-			config={
-				'displaylogo': False,
-				'modeBarButtonsToRemove': ['toImage', 'zoomIn2d', 'zoomOut2d', 'resetScale2d'],
-			}
+		dcc_transparent_loading(
+			loading_id='loading_plot_districts',
+			loading_children=[
+				dcc.Graph(
+					className='dash-graph-districts',
+					id='plot_districts',
+					figure={},
+					config={
+						'displaylogo': False,
+						'modeBarButtonsToRemove': ['toImage', 'zoomIn2d', 'zoomOut2d', 'resetScale2d'],
+					},
+					style={'height': 600}
+				)
+			]
 		)
-		# 	]
-		# )
 	])
 ])
 
@@ -51,7 +52,7 @@ row_table = dbc.Row([
 			sort_action='native',
 			sort_mode='multi',
 			fixed_rows={'headers': True, 'data': 0},
-			style_table={'max-height': 600},
+			style_table={'height': 600, 'maxHeight': 600},
 			style_cell_conditional=[
 				{'if': {'column_id': 'Okres'}, 		'textAlign': 'left'},
 				{'if': {'column_id': 'Okres'}, 		'width': '30%'},
