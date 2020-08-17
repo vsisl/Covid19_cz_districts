@@ -19,7 +19,7 @@ row_graph = dbc.Row([
 						'displaylogo': False,
 						'modeBarButtonsToRemove': ['toImage', 'zoomIn2d', 'zoomOut2d', 'resetScale2d'],
 					},
-					style={'height': 600}
+					# style={'height': 600}
 				)
 			]
 		)
