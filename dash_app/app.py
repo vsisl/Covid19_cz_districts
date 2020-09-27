@@ -104,13 +104,22 @@ else:
         # get data in wide format
         df = pd.read_csv(BytesIO(data))
         df = df.set_index(['Kraj', 'Okres']).T
-        df = df.dropna()
+
+        # originally, there would be no missing data (NaN) in the sheet
+        # if a KHS would not publish new data (technically NaN), maintainers would copy over last valid value
+        # but this changed recently => dropna() would cause dropping all days where at least one district has Nan value
+        # df = df.dropna()
+        # filling NaNs with last valid values
+        df = df.fillna(method='ffill')
+
+        # these two columns were originally present in the sheet but were removed later by maintainers
         # df = df.drop(index='Kontrola')
         # df = df.drop(index='Změna')
+
         df.index.rename(name='Datum', inplace=True)
 
         # wide to long
-        dff = df.stack(level=['Kraj', 'Okres'])
+        dff = df.stack(level=['Kraj', 'Okres'], dropna=True)
         dff = pd.DataFrame(dff)
         dff.reset_index(inplace=True)
         dff.rename(columns={0: 'Nakažení'}, inplace=True)
