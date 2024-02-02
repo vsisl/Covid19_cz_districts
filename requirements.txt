@@ -2,6 +2,6 @@
 requests
 pandas
 plotly_express
-dash==1.12.0
+dash==2.15.0
 dash-bootstrap-components
 gunicorn
